@@ -18,6 +18,8 @@ class CreateTariffsTable extends Migration
             $table->string("title")->nullable();
             $table->text("description");
             $table->float("price");
+            $table->integer("booking");
+            $table->float("waiting");
         });
     }
 
