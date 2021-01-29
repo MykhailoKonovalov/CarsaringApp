@@ -23,7 +23,7 @@ class CreateCarsTable extends Migration
             $table->string("car_passport")->nullable();
             $table->string("car_registration")->nullable();
             $table->string("car_service_book")->nullable();
-            $table->bigInteger("car_insurance_id")->unsigned();
+            $table->bigInteger("car_insurance_id")->unsigned()->nullable();
             $table->foreign("car_insurance_id")->references("id")->on("cars_insurances");
         });
     }
