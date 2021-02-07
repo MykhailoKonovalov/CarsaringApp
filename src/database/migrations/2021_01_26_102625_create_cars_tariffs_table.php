@@ -18,6 +18,8 @@ class CreateCarsTariffsTable extends Migration
             $table->bigInteger("cars_id")->unsigned();
             $table->foreign("tariffs_id")->references("id")->on("tariffs");
             $table->foreign("cars_id")->references("id")->on("cars");
+            $table->timestamp('created_at')->nullable();
+            $table->timestamp('updated_at')->nullable();
         });
     }
 

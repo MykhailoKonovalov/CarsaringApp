@@ -36,5 +36,5 @@ class Trips extends Model
 
     ];
 
-    public $timestamps = false;
+    public $timestamps = true;
 }

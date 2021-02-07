@@ -30,5 +30,14 @@ class UserPassports extends Model
 
     ];
 
-    public $timestamps = false;
+    /**
+     * The attributes that should be cast to native types.
+     *
+     * @var array
+     */
+    protected $casts = [
+        'verified_at' => 'datetime',
+    ];
+
+    public $timestamps = true;
 }

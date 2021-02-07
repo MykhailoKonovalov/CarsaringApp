@@ -17,6 +17,8 @@ class CreateInvoicesTable extends Migration
             $table->bigIncrements("id");
             $table->string("date");
             $table->float("total");
+            $table->timestamp('created_at')->nullable();
+            $table->timestamp('updated_at')->nullable();
         });
     }
 

@@ -19,6 +19,8 @@ class CreateUserLicensesTable extends Migration
             $table->text("comment");
             $table->string("status")->nullable()->default("New");
             $table->timestamp("verified_at")->default(null);
+            $table->timestamp('created_at')->nullable();
+            $table->timestamp('updated_at')->nullable();
         });
     }
 

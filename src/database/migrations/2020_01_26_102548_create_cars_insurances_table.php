@@ -20,6 +20,8 @@ class CreateCarsInsurancesTable extends Migration
             $table->dateTime("expiration_date")->default(null);
             $table->string("type");
             $table->float("price");
+            $table->timestamp('created_at')->nullable();
+            $table->timestamp('updated_at')->nullable();
         });
     }
 

@@ -24,6 +24,8 @@ class CreateCarsTable extends Migration
             $table->string("car_registration")->nullable();
             $table->string("car_service_book")->nullable();
             $table->bigInteger("car_insurance_id")->unsigned()->nullable();
+            $table->timestamp('created_at')->nullable();
+            $table->timestamp('updated_at')->nullable();
             $table->foreign("car_insurance_id")->references("id")->on("cars_insurances");
         });
     }

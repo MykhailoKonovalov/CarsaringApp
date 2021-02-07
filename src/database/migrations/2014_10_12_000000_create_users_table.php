@@ -16,11 +16,14 @@ class CreateUsersTable extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->bigIncrements("id");
             $table->string('name');
+            $table->string('phone');
             $table->string('email')->unique();
             $table->string('password');
-            $table->rememberToken();
-            $table->bigInteger('passport_id')->unsigned();
-            $table->bigInteger('license_id')->unsigned();
+            $table->bigInteger('passport_id')->unsigned()->nullable();
+            $table->bigInteger('license_id')->unsigned()->nullable();
+            $table->integer('role')->default(1);
+            $table->timestamp('created_at')->nullable();
+            $table->timestamp('updated_at')->nullable();
             $table->foreign("passport_id")->references('id')
                 ->on("user_passports")
                 ->onDelete("cascade");

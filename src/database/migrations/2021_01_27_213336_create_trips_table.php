@@ -25,6 +25,8 @@ class CreateTripsTable extends Migration
             $table->bigInteger("tariff_id")->unsigned();
             $table->bigInteger("car_id")->unsigned();
             $table->bigInteger("invoice_id")->unsigned();
+            $table->timestamp('created_at')->nullable();
+            $table->timestamp('updated_at')->nullable();
             $table->foreign("user_id")->references("id")->on("users");
             $table->foreign("tariff_id")->references('id')->on("tariffs");
             $table->foreign("car_id")->references("id")->on("cars");

@@ -20,6 +20,8 @@ class CreateTariffsTable extends Migration
             $table->float("price");
             $table->integer("booking");
             $table->float("waiting");
+            $table->timestamp('created_at')->nullable();
+            $table->timestamp('updated_at')->nullable();
         });
     }
 

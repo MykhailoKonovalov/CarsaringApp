@@ -33,5 +33,5 @@ class Cars extends Model
         'car_insurance_id',
     ];
 
-    public $timestamps = false;
+    public $timestamps = true;
 }
