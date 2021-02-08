@@ -14,8 +14,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
+Route::group(['middleware' => 'auth:api'], function(){
+    Route::get('users', 'App\Http\Controllers\UserController@index')->middleware('isAdmin');
+    Route::get('users/{id}', 'App\Http\Controllers\UserController@show')->middleware('isAdminOrSelf');
 });
 Route::prefix('auth')->group(function () {
     Route::post('register', 'App\Http\Controllers\AuthController@register');
